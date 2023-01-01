@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+  int len=5,A[len][len],printp=1,prints=1,P[len];
+  int print_princpal=len,print_secundaria=1;
+    for(int i=0;i<len;i++)
+      for(int j=0;j<len;j++){
+        A[i][j]=rand()%100;
+
+        if(j==i){
+            /*if(printp){
+            printf("\nMATRIZ PRINCIPAL: ");
+            printp=0;}
+            printf("%2d ",A[i][j]);*/
+            P[j]=A[i][j];
+        }
+        if(j+i==4){
+          /*if(prints){
+            printf("\nMATRIZ SECUNDARIA: ");
+            prints=0;}
+            printf("%2d ",A[i][j]);*/
+        } 
+      }
+  
+  printf("\n\n");
+    for(int i=0;i<len;i++){
+      for(int j=0;j<len;j++)
+        printf("%2d ",A[i][j]);
+      
+
+    printf("\n");}
+printf("\x0a");
+	return 0;} 
