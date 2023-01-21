@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void){
+
+  int i=3,j=2, matriz[i][j],matrizT[j][i];
+
+  printf("MATRIZ: \n");
+
+  for(int c=0;c<i;c++){
+      for(int d=0;d<j;d++){
+        matriz[c][d]=rand()%7;
+        printf("%d ",matriz[c][d]);
+        matrizT[d][c]=matriz[c][d];}
+      printf("\n");}
+
+  printf("\x0a");
+
+  //Transposta:
+  for(int c=0;c<j;c++){
+      for(int d=0;d<i;d++){
+        printf("%d ",matrizT[c][d]);}
+      printf("\n");}
+  
+
+	return 0;
+}
