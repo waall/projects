@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//CRIACAO DE UM VALIDADOR DE QUADRADO MAGICO
+//OQ E UM QUADRADO MAGICO
+//A SOMA DAS LINHAS, COLUNAS DIAGONAL PRINCPAL E SECUNDARIA DE UMA MATRIZ QUADRADA SAO EXATAMENTE IGUAIS
+
+#define len 4
+int main (void){
+
+  int mat[len][len] = {16,3,2,13,5,10,11,8,9,6,7,12,4,15,14,1};
+  int sum=0, row_sum, col_sum, diag_sum1, diag_sum2;
+  //Definir qual eh o valor comum a todos
+  for (int i=0; i<len;i++)
+    sum += mat[0][i];
+
+  //Verificar soma de todas as linhas
+  for (int i=1;i<len;i++){
+    row_sum=0;
+    for (int j=0;j<len;j++)
+      row_sum+=mat[i][j];
+    if (row_sum != sum)
+       return 0;
+  }
+
+  //Verificando soma de todas as colunas
+  for (int i=0;i<len;i++){
+    col_sum=0;
+    for (int j=0;j<len;j++)
+      col_sum+=mat[i][j];
+    if (col_sum != sum)
+      return 0;
+  }
+
+  for (int i=0;i<len;i++){
+    diag_sum1+=mat[i][i];
+    diag_sum2+=mat[i][len-i-1];
+  }
+  if (diag_sum1 != sum || diag_sum2 != sum)
+    return 0;
+
+  printf("We have a square magic!\n");
+  
+  for (int l=0;l<len;l++){
+    for (int c=0;c<len;c++){
+      printf("%3d  ",mat[l][c]);
+      if (c==len-1)
+        printf("%3d",row_sum);
+      }
+    printf("\n\n");
+  }
+
+    for (int i=0;i<len+2;i++)
+      printf("%3d  ",col_sum);
+    printf("\n");
+
+  return 0;
+}
