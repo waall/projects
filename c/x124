@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+//Create By: x57all
+//Verion: 1.0.0
+
+int main (void){
+
+  int tam=5,flag_m=0;
+  int a[tam][tam];
+  srand(12);
+
+  for (int i = 0 ; i < tam ; i++){
+    for (int j = 0 ; j < tam ; j++){
+      a[i][j]=rand()%10; 
+      printf("%d ",a[i][j]);
+
+      flag_m++;
+      if(flag_m == tam){
+        flag_m=0;
+        printf("\x0a");
+        }
+      //if(i>j)  //Se quiser imprimir somente os numeros abaixo da linha *comente a impressao da matriz acima! (linha 16 a 22)
+        //printf("%d ",a[i][j]);  //Para trocar para os valores acima basta inverter o ">"
+
+      } 
+    }
+
+ printf("\nValores abaixo da diagonal principal: ");
+ for(int i=0;i<tam;i++){
+    for(int j=0;j<tam;j++)
+      if(i>j)
+        printf("%d ",a[i][j]);
+    printf("\n");
+      }
+
+ printf("\nValores acima da diagonal principal:\n");
+ for(int i=0;i<tam;i++){
+    for(int j=0;j<tam;j++)
+      if(j>i)
+        printf("%d ",a[i][j]);
+    printf("\n");
+      }
+
+printf("\n");
+
+	return 0;
+}
